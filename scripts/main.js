@@ -1,16 +1,19 @@
 var runonce = true;
-
+var done = true;
 function startYourEngines(){
   var $wrapper = $(".wrapper");
-  var $display = $(".time");
-
+  var $display = $(".time span");
   updateDOM($wrapper);
-
+  done = false;
+  $display.html("running");
 }
 
 //Sample function
 function tick(){
-
+  if (!runonce && !done){
+  var lastChild = $(".wrapper:last-child");
+  $(".wrapper").prepend($('<div class="color" style="background-color: #0f0">'))
+}
 }
 
 //Sample HTML interactions
@@ -29,3 +32,5 @@ $(".time span").on("click", function(e) {
     runonce=false;
   }
 });
+
+var myInterval = window.setInterval(tick, 500);
