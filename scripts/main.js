@@ -16,7 +16,7 @@ function tick(){
 //Sample HTML interactions
 function updateDOM(parent){
   var $p = parent;
-  for (var i = 0; i < 47; i++){
+  for (var i = 0; i < 50; i++){
     var $section = $('<div class="color" style="background-color: #000">');
     $p.append($section);
   }
