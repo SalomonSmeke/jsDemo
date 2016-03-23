@@ -1,6 +1,10 @@
+var runonce = true;
+
 function startYourEngines(){
   var $wrapper = $(".wrapper");
   var $display = $(".time");
+
+  updateDOM($wrapper);
 
 }
 
@@ -11,12 +15,17 @@ function tick(){
 
 //Sample HTML interactions
 function updateDOM(parent){
+  var $p = parent;
   for (var i = 0; i < 47; i++){
-    
+    var $section = $('<div class="color" style="background-color: #000">');
+    $p.append($section);
   }
 }
 
 //Sample event handler
 $(".time span").on("click", function(e) {
-  startYourEngines();
+  if (runonce){
+    startYourEngines();
+    runonce=false;
+  }
 });
